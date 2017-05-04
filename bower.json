@@ -7,6 +7,6 @@
   "license": "MIT",
   "dependencies": {
     "framework7": "^1.6.0",
-    "h5-font-reset": "https://github.com/hixiaoguan/h5-font-reset.git#^1.0.1"
+    "html5-px2rem": "https://github.com/hixiaoguan/html5-px2rem.git"
   }
 }

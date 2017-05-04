@@ -1,8 +1,23 @@
-.a {
-  width: 3.125000rem;
-  height: 0.937500rem;
+.views {
+  margin: 0 auto;
+  max-width: 540px;
 }
-.b {
-  width: 10.000000rem;
-  height: 15.000000rem;
+.zkHeader {
+  width: 20.000000rem;
+  height: 3.125000rem;
+  background: #ccc;
+}
+.zkHeader .zkLogo {
+  width: 4.375000rem;
+  height: 1.406250rem;
+  display: block;
+  background: #ff0000;
+  float: left;
+}
+.zkHeader .zkMenu {
+  width: 15.625000rem;
+  height: 1.406250rem;
+  display: block;
+  background: #00ffff;
+  float: right;
 }

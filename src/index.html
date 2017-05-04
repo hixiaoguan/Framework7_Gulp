@@ -37,11 +37,7 @@
                 <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
                 <div class="center sliding">Awesome App</div>
                 <div class="right">
-                    <!--
-                      Right link contains only icon - additional "icon-only" class
-                      Additional "open-panel" class tells app to open panel when we click on this link
-                    -->
-                    <a href="#" class="link icon-only open-panel"><i class="icon icon-bars-blue"></i></a>
+                    <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
                 </div>
             </div>
         </div>
@@ -51,9 +47,19 @@
             <div data-page="index" class="page">
                 <!-- Scrollable page content -->
                 <div class="page-content">
-                    <p>Page content goes here</p>
-                    <!-- Link to another page -->
-                    <a href="about.html">About app</a>
+                    <div class="content-block">
+
+                        <p>Page content goes here</p>
+                        <!-- Link to another page -->
+                        <p>
+                            <a href="about.html">About app</a>
+                        </p>
+                        <p>
+                            <a href="test.html">Test app</a>
+                        </p>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -69,6 +75,9 @@
 </div>
 <!-- build:js libs/framework7.min.js -->
 <script type="text/javascript" src="../bower_components/framework7/dist/js/framework7.js"></script>
+<!-- endbuild -->
+<!-- build:js libs/html5-px2rem.min.js -->
+<script type="text/javascript" src="../bower_components/html5-px2rem/html5-px2rem.js"></script>
 <!-- endbuild -->
 <!-- build:js js/my-app.min.js -->
 <script type="text/javascript" src="js/my-app.js"></script>

@@ -35,14 +35,14 @@ gulp.task('less', function() {
     return gulp.src(paths.srcRoot + 'less/*.less')
         .pipe(less())
         .pipe(
-        px2rem({
-            'width_design': 320, // width_design：设计稿宽度。默认值640
-            'valid_num': 6, // valid_num：生成rem后的小数位数。默认值4
-            'pieces': 10, // pieces：将整屏切份。默认为10，相当于10rem = width_design(设计稿宽度)
-            'ignore_px': [1, 2], // ignore_px：让部分px不在转换成rem。默认为空数组
-            'ignore_selector': ['.page'] // ignore_selector：让部分选择器不在转换为rem。默认为空数组
-        })
-    )
+            px2rem({
+                'width_design': 320, // width_design：设计稿宽度。默认值640
+                'valid_num': 6, // valid_num：生成rem后的小数位数。默认值4
+                'pieces': 10, // pieces：将整屏切份。默认为10，相当于10rem = width_design(设计稿宽度)
+                'ignore_px': [1, 2], // ignore_px：让部分px不在转换成rem。默认为空数组
+                'ignore_selector': ['.views'] // ignore_selector：让部分选择器不在转换为rem。默认为空数组
+            })
+        )
         .pipe(gulp.dest(paths.srcRoot + 'css'));
 });
 
