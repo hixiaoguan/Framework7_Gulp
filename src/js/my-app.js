@@ -1,5 +1,9 @@
 // 初始化应用
-var myApp = new Framework7();
+var myApp = new Framework7({
+    /*
+        router:false //不启用路由
+    */
+});
 
 // 自定义DOM库读取表示我们用 $$ 标识符:
 var $$ = Framework7.$;

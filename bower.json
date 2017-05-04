@@ -4,13 +4,7 @@
     "jonyguan <309678100@qq.com>"
   ],
   "description": "0.0.1",
-  "main": "",
   "license": "MIT",
-  "homepage": "",
-  "ignore": [
-    "node_modules",
-    "bower_components"
-  ],
   "dependencies": {
     "framework7": "^1.6.0",
     "h5-font-reset": "https://github.com/hixiaoguan/h5-font-reset.git#^1.0.1"
