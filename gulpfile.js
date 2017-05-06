@@ -14,22 +14,6 @@ var paths = {
     srcRoot: 'src/',
     bowerRoot: 'bower_components/'
 };
-//压缩HTML
-gulp.task('htmlmin', function() {
-    var options = {
-        removeComments: true, //清除HTML注释
-        collapseWhitespace: true, //压缩HTML
-        collapseBooleanAttributes: true, //省略布尔属性的值 <input checked="true"/> ==> <input />
-        removeEmptyAttributes: true, //删除所有空格作属性值 <input id="" /> ==> <input />
-        removeScriptTypeAttributes: true, //删除<script>的type="text/javascript"
-        removeStyleLinkTypeAttributes: true, //删除<style>和<link>的type="text/css"
-        minifyJS: true, //压缩页面JS
-        minifyCSS: true //压缩页面CSS
-    };
-    gulp.src(paths.srcRoot + '*.html')
-        .pipe(htmlmin(options))
-        .pipe(gulp.dest(paths.distRoot));
-});
 //编译less文件
 gulp.task('less', function() {
     return gulp.src(paths.srcRoot + 'less/*.less')
@@ -55,7 +39,12 @@ gulp.task('del', function() {
 //图片压缩
 gulp.task('minifyimages', function() {
     return gulp.src(paths.srcRoot + 'img/**')
-        .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+        .pipe(imagemin({
+            interlaced: true,
+            progressive: true,
+            optimizationLevel: 5,
+            svgoPlugins: [{removeViewBox: true}]
+        }))
         .pipe(gulp.dest(paths.distRoot + 'img'));
 });
 
@@ -67,11 +56,27 @@ gulp.task('usemin', function() {
             js: [uglify],
             copy: [copyfile]
         }))
-        .pipe(gulp.dest(paths.distRoot));
+        .pipe(gulp.dest(paths.distRoot))
 });
 
 //打包到dist目录
-gulp.task('dist', ['del', 'less', 'usemin', 'htmlmin', 'minifyimages']);
+gulp.task('dist', ['less', 'usemin', 'minifyimages'],function(){
+    //htmlmin压缩选项
+    var options = {
+        removeComments: true, //清除HTML注释
+        collapseWhitespace: true, //压缩HTML
+        collapseBooleanAttributes: true, //省略布尔属性的值 <input checked="true"/> ==> <input />
+        removeEmptyAttributes: true, //删除所有空格作属性值 <input id="" /> ==> <input />
+        removeScriptTypeAttributes: true, //删除<script>的type="text/javascript"
+        removeStyleLinkTypeAttributes: true, //删除<style>和<link>的type="text/css"
+        minifyJS: true, //压缩页面JS
+        minifyCSS: true //压缩页面CSS
+    };
+    return gulp.src(paths.distRoot + '/*.html')
+        .pipe(htmlmin(options))
+        .pipe(gulp.dest(paths.distRoot));
+
+});
 //监控
 gulp.task('watch', function() {
     //监控所有.less
