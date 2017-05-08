@@ -20,8 +20,8 @@ gulp.task('less', function() {
         .pipe(less())
         .pipe(
             px2rem({
-                'width_design': 320, // width_design：设计稿宽度。---小官提示：如果你配合我写的html5-px2rem.js使用，这个值不要修改，放心你的页面会自动匹配的；
-                'pieces': 10, // pieces：将整屏切份。默认为10，相当于10rem = width_design(设计稿宽度)---小官提示：如果你配合我写的html5-px2rem.js使用，这个参数不要修改；
+                'width_design': 640, // width_design：设计稿宽度。默认为640，如果你的屏幕是750的可以直接修改该参数为750即可
+                'pieces': 10, // pieces：将整屏切份。默认为10，相当于10rem = width_design(设计稿宽度)
                 'valid_num': 6, // valid_num：生成rem后的小数位数。默认值4
                 'ignore_px': [1, 2], // ignore_px：让部分px不在转换成rem。默认为空数组
                 'ignore_selector': ['.views'] // ignore_selector：让部分选择器不在转换为rem。默认为空数组
