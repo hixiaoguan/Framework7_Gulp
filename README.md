@@ -6,7 +6,9 @@
 
 * 或直接下载：https://github.com/hixiaoguan/Framework7_Gulp/archive/master.zip
 
-* 进入目录 npm install
+* 进入目录 
+
+* 安装扩展包：分别执行 npm install 和 bower install
 
 * 开发过程中 gulp watch 命令 可以 监听 less 文件发生变化 自动生成 css 文件
 
