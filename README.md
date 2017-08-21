@@ -1,5 +1,10 @@
 # Framework7 + Gulp 快速前端开发工作环境搭建
 
+## 环境要求
+
+* 使用前请检查是否已经安装好以下相关工具(都安装最新版就好)
+* node，bower，gulp，git
+
 ## 开始使用
 
 * git clone https://github.com/hixiaoguan/Framework7_Gulp.git
