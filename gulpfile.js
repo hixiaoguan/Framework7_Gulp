@@ -14,6 +14,14 @@ var paths = {
     srcRoot: 'src/',
     bowerRoot: 'bower_components/'
 };
+//拷贝资源文件(icon字体)
+gulp.task('copy',function(){
+    gulp.src(paths.bowerRoot + 'framework7-icons/css/*.css')
+    .pipe(cssmin())
+    .pipe(gulp.dest(paths.distRoot + 'css'));
+    gulp.src(paths.bowerRoot + 'framework7-icons/fonts/*.*')
+    .pipe(gulp.dest(paths.distRoot + 'fonts'));
+});
 //编译less文件
 gulp.task('less', function() {
     return gulp.src(paths.srcRoot + 'less/*.less')
@@ -60,7 +68,7 @@ gulp.task('usemin', function() {
 });
 
 //打包到dist目录
-gulp.task('dist', ['less', 'usemin', 'minifyimages'],function(){
+gulp.task('dist', ['copy', 'less', 'usemin', 'minifyimages'],function(){
     //htmlmin压缩选项
     var options = {
         removeComments: true, //清除HTML注释
