@@ -7,6 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "framework7": "^1.6.0",
-    "html5-px2rem": "https://github.com/hixiaoguan/html5-px2rem.git"
+    "html5-px2rem": "https://github.com/hixiaoguan/html5-px2rem.git",
+    "framework7-icons": "^0.9.0"
   }
 }
